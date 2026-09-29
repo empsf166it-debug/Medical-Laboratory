@@ -54,12 +54,13 @@
                         <li class="nav-item"><a class="nav-link" href="#diagnostics">Diagnostics</a></li>
                         <li class="nav-item"><a class="nav-link" href="#technology">Technology</a></li>
                         <li class="nav-item"><a class="nav-link" href="#why-lumalab">Why LumaLab</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                     <div class="header-actions d-flex align-items-center gap-3">
                         <button class="theme-toggle btn-icon" aria-label="Toggle Theme"><i
                                 class="fa-solid fa-moon"></i></button>
-                        <a href="#contact" class="btn btn-primary cta-btn">Book a Test</a>
+                        <button class="btn btn-primary cta-btn" data-bs-toggle="modal" data-bs-target="#bookingModal">Book a Test</button>
                     </div>
                 </div>
             </nav>
@@ -82,9 +83,11 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="#why-lumalab" data-bs-dismiss="offcanvas">Why LumaLab</a>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="#faq" data-bs-dismiss="offcanvas">FAQ</a>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn btn-primary w-100 mb-3" data-bs-dismiss="offcanvas">Book a Test</a>
+            <button class="btn btn-primary w-100 mb-3" data-bs-toggle="modal" data-bs-target="#bookingModal" data-bs-dismiss="offcanvas">Book a Test</button>
         </div>
     </div>
 
@@ -303,7 +306,71 @@
         </div>
     </section>
 
-    <!-- Section 5: Contact / Booking -->
+    <!-- Section: FAQ -->
+    <section id="faq" class="faq py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 anim-slide-up">
+                <span class="eyebrow anim-eyebrow">GOT QUESTIONS?</span>
+                <h2 class="section-title anim-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion custom-accordion" id="faqAccordion">
+                        <div class="accordion-item anim-slide-up" style="transition-delay: 0.1s;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    How long does it take to get my results?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Most routine test results are available within 24 to 48 hours. Specialized diagnostic tests may take 3-5 business days. You will receive an SMS and email notification once your secure digital report is ready.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item anim-slide-up" style="transition-delay: 0.2s;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do I need to fast before my blood test?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    It depends on the specific test ordered. For standard lipid panels and fasting glucose tests, you should fast for 8-12 hours prior. Our team will provide precise instructions when you book your appointment.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item anim-slide-up" style="transition-delay: 0.3s;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do you accept insurance?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we accept most major health insurance providers. Please bring your insurance card and a valid ID to your appointment. You can also contact our billing department beforehand to verify coverage.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item anim-slide-up" style="transition-delay: 0.4s;">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can I walk in for a test, or is an appointment required?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    While we do accept walk-ins for routine tests, we highly recommend booking an appointment online or by phone. This ensures minimal wait times and allows us to prepare for any specific requirements your test might have.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Contact / Booking -->
     <section id="contact" class="booking section-5 py-5">
         <div class="lab-grid-bg"></div>
         <div class="container position-relative z-1">
@@ -418,6 +485,49 @@
         </div>
     </section>
 
+    <!-- Booking Modal -->
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-4 border-0 shadow-lg bg-surface">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="bookingModalLabel">Quick Callback Request</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <p class="text-muted mb-4">Leave your details and we'll call you back instantly to confirm your appointment.</p>
+                    <form class="booking-form bg-surface">
+                        <div class="row g-3">
+                            <div class="col-12 form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+1 (555) 000-0000" required>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label class="form-label">Test Required (Optional)</label>
+                                <select class="form-select">
+                                    <option value="">Select a test category...</option>
+                                    <option>Blood Testing</option>
+                                    <option>Hormone Testing</option>
+                                    <option>Diabetes Screening</option>
+                                    <option>Specialized Diagnostics</option>
+                                </select>
+                            </div>
+                            <div class="col-12 mt-4 form-group">
+                                <button type="submit" class="btn btn-primary w-100">Request Callback</button>
+                            </div>
+                            <div class="col-12 text-center mt-3 form-group">
+                                <small class="text-muted"><i class="fa-solid fa-bolt me-1"></i> We usually respond within 5 minutes.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer py-5">
         <div class="container">
@@ -441,6 +551,7 @@
                         <li><a href="#diagnostics">Diagnostics</a></li>
                         <li><a href="#technology">Technology</a></li>
                         <li><a href="#why-lumalab">Why LumaLab</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>

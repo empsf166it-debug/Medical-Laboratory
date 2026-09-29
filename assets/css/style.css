@@ -1023,6 +1023,59 @@ section {
 }
 
 /* ==========================================================================
+   FAQ SECTION
+   ========================================================================== */
+.custom-accordion .accordion-item {
+    background-color: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+}
+
+.custom-accordion .accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.custom-accordion .accordion-button {
+    background-color: transparent;
+    color: var(--clr-text-dark);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 20px 25px;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--clr-secondary);
+    background-color: rgba(26, 93, 58, 0.05);
+}
+
+[data-theme="dark"] .custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--clr-accent);
+    background-color: rgba(181, 193, 203, 0.05);
+}
+
+.custom-accordion .accordion-button::after {
+    transition: transform var(--transition-smooth);
+}
+
+[data-theme="dark"] .custom-accordion .accordion-button::after {
+    filter: invert(1) brightness(200%);
+}
+
+.custom-accordion .accordion-body {
+    padding: 0 25px 25px 25px;
+    color: var(--clr-text-muted);
+}
+
+.faq.is-visible .anim-slide-up { opacity: 1; transform: translateY(0); }
+.faq.is-visible .anim-eyebrow { opacity: 1; transform: translateY(0); letter-spacing: 3px; }
+.faq.is-visible .anim-heading { opacity: 1; transform: translateY(0); letter-spacing: normal; }
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 
@@ -1050,6 +1103,7 @@ section {
     .process-wrapper {
         padding-left: 30px;
         margin-left: 15px;
+        width: calc(100% - 15px);
         margin-top: 40px;
     }
     
@@ -1112,6 +1166,11 @@ section {
     
     .form-wrap {
         padding: 0 !important;
+    }
+    
+    .process-wrapper {
+        margin-left: 30px;
+        width: calc(100% - 30px);
     }
 }
 

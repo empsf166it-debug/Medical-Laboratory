@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (savedTheme === 'dark') {
         htmlEl.setAttribute('data-theme', 'dark');
+        htmlEl.setAttribute('data-bs-theme', 'dark');
         updateThemeIcons('dark');
     }
     
@@ -26,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (newTheme === 'dark') {
                 htmlEl.setAttribute('data-theme', 'dark');
+                htmlEl.setAttribute('data-bs-theme', 'dark');
             } else {
                 htmlEl.removeAttribute('data-theme');
+                htmlEl.removeAttribute('data-bs-theme');
             }
             
             localStorage.setItem('lumalab_theme', newTheme);
@@ -184,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form Submission (Prevent default for demo)
-    const bookingForm = document.querySelector('.booking-form');
-    if(bookingForm) {
+    const bookingForms = document.querySelectorAll('.booking-form');
+    bookingForms.forEach(bookingForm => {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = bookingForm.querySelector('button[type="submit"]');
@@ -207,5 +210,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 3000);
             }, 1500);
         });
-    }
+    });
 });
